@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'flights'], function(){
+    Route::get('/getFlights', 'FlightController@searchFlight')->name('api.flights.getFlights');
+    Route::get('/getTickets','TicketsflightController@searchTickets');
+});
