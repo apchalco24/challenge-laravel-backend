@@ -28,10 +28,8 @@ class Flight extends Model
      * @var array
      */
     protected $fillable = [
-        'price',
         'airline',
-        'scalas_number',
-        'flight_duration',
+        'passengers_number',
         'created_by',
         'updated_by'
     ];

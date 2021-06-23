@@ -14,11 +14,8 @@ class CreateFlightsTable extends Migration
     {
         Schema::create('flights', function (Blueprint $table) {
             $table->increments('id');
-            $table->decimal('price', 18,2)->default(0.00);
             $table->string('airline',255);
-            $table->integer('scalas_number')->default(0);
-            $table->integer('flight_duration')->default(0);
-            $table->index('price');
+            $table->integer('passengers_number')->default(0);
             $table->index('airline');
             $table->timestamps();
             $table->index('created_at');

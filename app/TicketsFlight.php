@@ -32,11 +32,18 @@ class TicketsFlight extends Model
         'destination_origin',
         'date_flight',
         'return_date',
+        'scalas_number',
+        'flight_duration',
+        'price',
         'flight_id',
         'created_by',
         'updated_by'
     ];
-
+    $table->timestamp('date_flight')->useCurrent();
+    $table->timestamp('return_date')->useCurrent();
+    $table->integer('scalas_number')->default(0);
+    $table->integer('flight_duration')->default(0);
+    $table->decimal('price', 18,2)->default(0.00);
 
     /**
      * Atributos generados automáticamente por el modelo.

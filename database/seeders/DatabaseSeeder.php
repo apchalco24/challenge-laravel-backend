@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Bases\Flhtig;
+use Bases\TicketsFlight;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +15,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        DB::table('airline_tickets')->truncate();
+        DB::table('flights')->truncate();
+        $oFlight = new Flight;
+        $oFlight->airline = 'Tame';
+        $oFlight->save();
+
+        $oFlight = new Flight;
+        $oFlight->airline = 'LAN';
+        $oFlight->save();
+
+        $oFlight = new Flight;
+        $oFlight->airline = 'LATAM';
+        $oFlight->save();
+
+        $oTicketFlight = new TicketFlight;
+        
+
     }
 }

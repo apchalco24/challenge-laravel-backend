@@ -18,6 +18,9 @@ class CreateAirplaneTicketsTable extends Migration
             $table->string('destination_city',255);
             $table->timestamp('date_flight')->useCurrent();
             $table->timestamp('return_date')->useCurrent();
+            $table->integer('scalas_number')->default(0);
+            $table->integer('flight_duration')->default(0);
+            $table->decimal('price', 18,2)->default(0.00);
             $table->integer('flight_id')->unsigned();
             $table->foreign('flight_id')
                       ->references('id')
@@ -25,6 +28,7 @@ class CreateAirplaneTicketsTable extends Migration
                       ->onDelete('restrict')
                       ->onUpdate('restrict');
             $table->index('city_origin');
+            $table->index('price');
             $table->timestamps();
             $table->index('created_at');
         });
