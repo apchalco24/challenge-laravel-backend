@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Alsofronie\Uuid\UuidModelTrait;
 
 /**
 * Clase para administrar vuelos
@@ -14,7 +13,6 @@ use Alsofronie\Uuid\UuidModelTrait;
 
 class TicketsFlight extends Model
 {
-    use UuidModelTrait;
     /**
      * Tabla de la Base de Datos usada por el modelo.
      *
@@ -39,11 +37,6 @@ class TicketsFlight extends Model
         'created_by',
         'updated_by'
     ];
-    $table->timestamp('date_flight')->useCurrent();
-    $table->timestamp('return_date')->useCurrent();
-    $table->integer('scalas_number')->default(0);
-    $table->integer('flight_duration')->default(0);
-    $table->decimal('price', 18,2)->default(0.00);
 
     /**
      * Atributos generados automáticamente por el modelo.

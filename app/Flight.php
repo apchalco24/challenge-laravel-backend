@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Alsofronie\Uuid\UuidModelTrait;
 
 /**
 * Clase para administrar vuelos
@@ -14,7 +13,6 @@ use Alsofronie\Uuid\UuidModelTrait;
 
 class Flight extends Model
 {
-    use UuidModelTrait;
     /**
      * Tabla de la Base de Datos usada por el modelo.
      *
@@ -28,6 +26,7 @@ class Flight extends Model
      * @var array
      */
     protected $fillable = [
+        'id',
         'airline',
         'passengers_number',
         'created_by',
