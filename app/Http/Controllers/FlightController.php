@@ -28,7 +28,9 @@ class FlightController extends Controller
     */
     public function searchFlight(){
 
-        $oFlight = DB::table('flights')->get();
+        $oFlight = DB::table('flights')
+        ->select('id AS Identificador Vuelo', 'airline AS Aerolínea', 'passengers_number AS Total de Pasajeros')
+        ->get();
 
         if(!is_object($oFlight)){
         	$aResponse = [

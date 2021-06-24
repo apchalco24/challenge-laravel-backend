@@ -30,9 +30,9 @@ class TicketsFlightController extends Controller
 
         $oTicketsFlight = DB::table('flights')
             ->join('airplane_tickets', 'flights.id', '=', 'airplane_tickets.flight_id')
-            ->select('airplane_tickets.city_origin', 'airplane_tickets.destination_city',
-             'airplane_tickets.date_flight', 'airplane_tickets.return_date', 'airplane_tickets.scalas_number',
-             'airplane_tickets.flight_duration', 'airplane_tickets.price','flights.airline')
+            ->select('airplane_tickets.city_origin AS Origen', 'airplane_tickets.destination_city AS Destino',
+             'airplane_tickets.date_flight AS Fecha', 'airplane_tickets.return_date AS Fecha de retorno', 'airplane_tickets.scalas_number AS N° de escalas',
+             'airplane_tickets.flight_duration AS Duración', 'airplane_tickets.price AS Precio','flights.airline AS Aerolinea')
             ->get();
 
         if(!is_object($oTicketsFlight)){
